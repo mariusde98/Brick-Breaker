@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026a5cff934bdfe47a64029d4fe37aec, type: 3}
+  m_Name: SphereSettingsLayer3
+  m_EditorClassIdentifier: 
+  blockCount: 1000
+  radius: 100
+  clampX: {x: 0, y: 1}
+  clampY: {x: 0.3, y: 0.6983819}
+  clampZ: {x: 0, y: 1}
+  defaultPrefabs:
+  - {fileID: 2684789179112888946, guid: 2b1549ed9d9034d6f94c2d04d61658c8, type: 3}
+  specialPrefabs:
+  - {fileID: 2712912626056591230, guid: 07530957fa793499faef288400f43d57, type: 3}
+  - {fileID: 1803680641847759349, guid: 7a7d033b0de2f437c93058101b394684, type: 3}
+  - {fileID: 8781276033422191680, guid: 2990d7184bd124327a4e67f4ff727126, type: 3}
+  - {fileID: 2524844964808648694, guid: 36cf04704e92a489da62689a296e3d68, type: 3}
+  - {fileID: 3735354481791165590, guid: 943991d6e6ace4ce8af9ffa5974e236e, type: 3}
+  - {fileID: 2918140400302817272, guid: 8c9d916be539b431389023fccf067ec9, type: 3}
+  - {fileID: 9111367089653195665, guid: 0fe1be5b2aba24fa4ad5d7b96451bdfe, type: 3}
+  specialChance:
+  - 0.075
+  - 0.075
+  - 0.075
+  - 0.075
+  - 0.075
+  - 0.075
+  - 0.075
