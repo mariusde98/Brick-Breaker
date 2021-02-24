@@ -33,6 +33,6 @@ public class PlatformSizeEffect : BrickEffect
         yield return new WaitForSeconds(duration);
 
         // Reset the platform's size
-        platformController.SetScale(1, 1);
+        platformController.SetScale(1.2f, 2.0f);
     }
 }
