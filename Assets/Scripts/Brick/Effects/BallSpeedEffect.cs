@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallSpeedEffect : BrickEffect
 {
@@ -8,7 +9,9 @@ public class BallSpeedEffect : BrickEffect
     // Dieser BrickEffect erhöht die Geschwindigkeit des Balls für eine gewisse Zeit
 
     // How much does this effect change the speed (1.0 == no change)
+	
     [Range(0.1f, 20f)]
+	TimeProgress bar;
     public float speedFactor = 2;
 
     // How long is the effect active (in seconds)
@@ -18,9 +21,14 @@ public class BallSpeedEffect : BrickEffect
     // Whether or not this effect should change the ball's color as well
     // (this should be reserved to Speed Effect blocks)
     public bool willChangeColor = false;
+		
+	public void Start() {
+		bar = GetComponent<TimeProgress>();
+	}
 
     public override IEnumerator Apply(BallController ballController)
     {
+
         // Scale the ball's direction vector by the given amount to change its speed
         float normalSpeed = ballController.direction.magnitude;
         ballController.direction = ballController.direction * speedFactor;
@@ -28,6 +36,7 @@ public class BallSpeedEffect : BrickEffect
         if (willChangeColor)
         {
             ballController.isSpeedChanged = true;
+			bar.IncrementProgress(duration);
         }
 
         // Wait for the effect to stop
@@ -41,4 +50,5 @@ public class BallSpeedEffect : BrickEffect
             ballController.isSpeedChanged = false;
         }
     }
+
 }

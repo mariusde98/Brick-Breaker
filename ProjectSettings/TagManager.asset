@@ -9,6 +9,7 @@ TagManager:
   - Camera
   - Ball
   - BallSpawn
+  - Slider
   layers:
   - Default
   - TransparentFX
