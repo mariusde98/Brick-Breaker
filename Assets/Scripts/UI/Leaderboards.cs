@@ -27,6 +27,8 @@ public class Leaderboards : MonoBehaviour
         {
             myText.text = "The Highscore: " + score.GetCurrentScore();
         }
+
+        
     }
 
 }

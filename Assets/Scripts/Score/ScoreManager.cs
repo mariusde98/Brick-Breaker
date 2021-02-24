@@ -20,6 +20,8 @@ public class ScoreManager : MonoBehaviour
 
     private int currentScore; //score of the current level
     private float timer;
+      private List<HighscoreEntry> highscoreEntryList;
+       private List<Transform> highscoreEntryTransformList;
 
     private void Awake()
     {
@@ -85,6 +87,11 @@ public class ScoreManager : MonoBehaviour
 
             SaveLoadManager.SaveObject(scoreSavestate);
         }
+
+       
+
+        AddHighscoreEntry(currentScore);
+       
     }
 
     public ScoreSavestate GetHighscore()
@@ -105,4 +112,27 @@ public class ScoreManager : MonoBehaviour
         //Saving the highscore
         SaveLoadManager.SaveObject(scoreSavestate);
     }
+
+    private class Highscores{
+        public List<HighscoreEntry> highscoreEntryList;
+    }
+    
+    [System.Serializable]
+    private class HighscoreEntry {
+        public int score;
+    }
+
+    private void AddHighscoreEntry(int score){
+       HighscoreEntry highscoreEntry = new HighscoreEntry{ score = score};
+        
+       string jsonString = PlayerPrefs.GetString("highscoreTable");
+       Highscores highscores =JsonUtility.FromJson<Highscores>(jsonString);
+       highscores.highscoreEntryList.Add(highscoreEntry);
+
+       string json = JsonUtility.ToJson(highscores);
+        PlayerPrefs.SetString("highscoreTable", json);
+        PlayerPrefs.Save();
+       
+    }
+
 }
